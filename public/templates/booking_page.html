@@ -1,0 +1,91 @@
+  <div class="page-title">
+    <div>
+      <h1>{{page_title}}</h1>
+      <p>แบบฟอร์มจองห้องพักสำหรับน้องแมวของคุณ</p>
+    </div>
+  </div>
+
+  {{alerts}}
+
+  <div class="card booking-panel">
+    <form method="post" id="booking-form">
+      <div class="form-grid">
+        <label>ชื่อแมว
+          <input type="text" name="cat_name" required value="{{cat_name}}" />
+        </label>
+        <label>สายพันธุ์
+          <input type="text" name="breed" required value="{{breed}}" />
+        </label>
+        <label>อายุ
+          <input type="number" name="age" min="1" required value="{{age}}" />
+        </label>
+        <label>เพศ
+          <select name="gender" required>
+            <option value="">เลือกเพศ</option>
+            <option value="ชาย"{{gender_male}}>ชาย</option>
+            <option value="หญิง"{{gender_female}}>หญิง</option>
+          </select>
+        </label>
+        <label>วันที่เริ่มต้น
+          <input type="date" name="start_date" id="start_date" required value="{{start_date}}" />
+        </label>
+        <label>วันที่สิ้นสุด
+          <input type="date" name="end_date" id="end_date" required value="{{end_date}}" />
+        </label>
+        <label>เลือกประเภทห้องพัก
+          <select name="roomtype_id" id="roomtype" required>
+            <option value="">เลือกรายการ</option>
+            {{room_options}}
+          </select>
+        </label>
+        <label>รายละเอียดเพิ่มเติมของแมว
+          <textarea name="medical_history">{{medical_history}}</textarea>
+        </label>
+      </div>
+
+      <div class="booking-summary">
+        <div><strong>ห้องที่เลือก:</strong> <span id="summary-room">-</span></div>
+        <div><strong>ราคา/คืน:</strong> <span id="summary-price">-</span></div>
+        <div><strong>จำนวนคืน:</strong> <span id="summary-days">-</span></div>
+        <div><strong>ยอดรวม:</strong> <span id="summary-total">-</span></div>
+      </div>
+
+      <div class="button-row">
+        <button type="submit" class="button button-primary">ส่งคำขอจอง</button>
+        <button type="button" class="button button-secondary" id="clear-form">ล้างแบบฟอร์ม</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card">
+    <div class="section-header">
+      <h2>ตารางห้องพักว่าง</h2>
+      <div class="filter-group">
+        <label>ค้นหา</label>
+        <input type="text" id="room-filter" placeholder="ค้นหาชื่อห้องหรือราคา..." />
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table id="room-table">
+        <thead>
+          <tr>
+            <th>ชื่อห้อง</th>
+            <th>รายละเอียด</th>
+            <th>ราคา/คืน</th>
+            <th>รองรับ</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{room_rows}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>ประวัติการเข้าพักของฉัน</h2>
+    {{booking_history}}
+  </div>
+
+  <script src="{{script_src}}"></script>

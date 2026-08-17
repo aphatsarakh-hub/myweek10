@@ -1,0 +1,399 @@
+/* =========================================
+   Global Theme: White - Orange - Brown
+========================================= */
+:root {
+  /* โทนสีพื้นหลังและกล่อง */
+  --bg: #F9F7F4;
+  --surface: #FFFFFF;
+  --surface-strong: #F2EBE3;
+  
+  /* โทนสีตัวอักษร */
+  --text: #4A3B32;
+  --muted: #8D7B68;
+  
+  /* โทนสีหลักของแบรนด์ */
+  --primary: #E58A35;
+  --primary-soft: #FDF3EB;
+  
+  /* โทนสีสถานะ */
+  --success: #52895A;
+  --danger: #D35C5C;
+  --warning: #D9A036;
+  
+  /* โทนสีเส้นขอบ */
+  --border: #E6DFD7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: 'Prompt', 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #C46D1F;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ฟอร์มกรอกข้อมูล */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* เอฟเฟกต์ตอนกดพิมพ์ข้อความ (Focus) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid rgba(229, 138, 53, 0.3);
+  outline-offset: 1px;
+  border-color: var(--primary);
+}
+
+/* ปุ่มกดต่างๆ */
+.button,
+button,
+input[type="submit"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.97rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+  transform: translateY(-2px);
+  background: #D87C29;
+  box-shadow: 0 10px 20px rgba(229, 138, 53, 0.25);
+}
+
+.button-secondary {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.button-secondary:hover {
+  background: var(--surface-strong);
+  box-shadow: none;
+  color: var(--text);
+}
+
+.button-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.button-danger:hover {
+  background: #B94B4B;
+  box-shadow: 0 10px 20px rgba(211, 92, 92, 0.25);
+}
+
+/* แถบเมนูด้านบน (Header) */
+.site-header {
+  background: linear-gradient(135deg, var(--primary) 0%, #C46D1F 100%);
+  color: #fff;
+  padding: 16px 0;
+  box-shadow: 0 10px 30px rgba(74, 59, 50, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand a {
+  color: #fff;
+}
+
+.brand a:hover {
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* โครงสร้างหน้าเว็บ */
+.main-wrapper {
+  width: min(1200px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px 0 50px;
+}
+
+/* Hero Section (กล่องแบนเนอร์ด้านบน) */
+.hero-section {
+  background: linear-gradient(to right, rgba(74, 59, 50, 0.8), rgba(74, 59, 50, 0.4)), url('https://images.unsplash.com/photo-1543852786-1cf6624b9987?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
+  border-radius: 24px;
+  padding: 60px 40px;
+  color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.hero-section h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 24px;
+  color: #f0f0f0;
+}
+
+.page-title {
+  margin-bottom: 24px;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.page-title h2 {
+  margin: 0;
+}
+
+/* กล่องเนื้อหา (Cards) */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 12px 30px rgba(74, 59, 50, 0.04);
+  transition: transform 0.3s ease;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.room-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-price {
+  font-size: 1.4rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+/* ป้ายกำกับสถานะ (Badges) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.badge-primary { background: var(--primary-soft); color: var(--primary); }
+.badge-success { background: #EDF3EE; color: var(--success); }
+.badge-warning { background: #FFF9EE; color: #A47012; }
+.badge-danger { background: #FAF0F0; color: var(--danger); }
+
+/* แผงข้อมูลการจอง (Booking Panel) */
+.booking-panel {
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--warning), var(--primary)) 1;
+  position: relative;
+  background: #fff;
+}
+
+/* วงกลมไอคอนมุมขวาบนของแบบฟอร์ม */
+.booking-panel::before {
+  content: '\f0d6'; /* รหัสสำหรับไอคอนเงินของ FontAwesome */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--warning), var(--primary));
+  color: #fff;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 20px rgba(229, 138, 53, 0.3);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+/* กล่องสรุปการจอง */
+.booking-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px;
+  margin: 18px 0;
+  background: var(--surface-strong);
+  border: 1px dashed #D5C8BE;
+  border-radius: 18px;
+}
+
+.booking-summary div {
+  padding: 15px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 2px 5px rgba(74, 59, 50, 0.03);
+}
+
+.booking-summary h4 {
+  margin: 0 0 5px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.booking-summary p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Footer (ส่วนล่างสุดของเว็บ) */
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* การแสดงผลบนมือถือ / แท็บเล็ต (Responsive) */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+  .form-grid, .booking-summary {
+    grid-template-columns: 1fr;
+  }
+  .hero-section {
+    padding: 40px 20px;
+  }
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+  .booking-panel::before {
+    right: 10px;
+  }
+}
